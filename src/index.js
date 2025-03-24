@@ -4,6 +4,7 @@ import userRouter from "./routes/userRoutes.js";
 import powerStationRouter from "./routes/powerStationRoutes.js";
 import brandRouter from "./routes/brandRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
+import batteryRouter from "./routes/batteryRoutes.js";
 import connectDb from "./database/connectDb.js";
 import cors from "cors";
 
@@ -15,7 +16,7 @@ const port = process.env.PORT;
 const dbUrl = process.env.DATABASE_URL?? "mongodb://localhost:27017/vebs";
 
 //middleware
-app.use(cors({ origin: "http://localhost:5173" }));
+app.use(cors({ origin: process.env.CLIENT_URL }));
 app.use(express.json());
 
 //routes
@@ -23,6 +24,7 @@ app.use("/api/user", userRouter);
 app.use("/api/powerstation", powerStationRouter);
 app.use("/api/brand", brandRouter);
 app.use("/api/category", categoryRouter);
+app.use("/api/battery", batteryRouter);
 
 //connectDb
 connectDb(dbUrl).then(() => {
