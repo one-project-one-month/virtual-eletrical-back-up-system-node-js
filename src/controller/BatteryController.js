@@ -27,7 +27,7 @@ export const createBattery = async (req, res) => {
     const { _id, ...data} = req.body;
     try {
         const newBattery = await Battery.createBattery(data);
-        res.status(200).json({ msg: "Battery created successfully", data: newBattery});
+        res.status(201).json({ msg: "Battery created successfully", data: newBattery});
     } catch (error) {
         res.status(500).json({ msg: error.message });
     }

@@ -29,7 +29,7 @@ export const addPowerStation = async (req, res) => {
     
     try {
         await PowerStation.create(data);
-        res.status(200).json({msg: "Powerstation added successfully.."});
+        res.status(201).json({msg: "Powerstation added successfully.."});
     } catch(error) {
         res.status(500).json({error: error.message});
     }
