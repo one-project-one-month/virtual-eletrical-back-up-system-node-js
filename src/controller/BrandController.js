@@ -29,7 +29,7 @@ export const createBrand = async(req, res) => {
 
     try {
         const created = await Brand.insertOne(data);
-        res.status(200).json({data: created});
+        res.status(201).json({data: created});
     } catch (error) {
         res.status(500).json({error: error.message});
     }

@@ -5,6 +5,7 @@ import powerStationRouter from "./routes/powerStationRoutes.js";
 import brandRouter from "./routes/brandRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
 import batteryRouter from "./routes/batteryRoutes.js";
+import batteryTypeRouter from "./routes/batteryTypeRoutes.js";
 import connectDb from "./database/connectDb.js";
 import cors from "cors";
 
@@ -25,6 +26,7 @@ app.use("/api/powerstation", powerStationRouter);
 app.use("/api/brand", brandRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/battery", batteryRouter);
+app.use("/api/battery-type", batteryTypeRouter);
 
 //connectDb
 connectDb(dbUrl).then(() => {
