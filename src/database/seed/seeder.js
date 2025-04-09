@@ -6,10 +6,10 @@ import { batteryTypeSeed } from "./batteryTypeSeed.js";
 import { batterySeed } from "./batterySeed.js";
 
 export const seeder = async () => {
-    // await userSeed();
-    // await categorySeed();
-    // await brandSeed();
-    // await powerStationSeed();
-    // await batteryTypeSeed();
-    // await batterySeed();
-}
+  // await userSeed();
+  // await categorySeed();
+  // await brandSeed();
+  // await powerStationSeed();
+  // await batteryTypeSeed();
+  // await batterySeed();
+};

@@ -14,7 +14,7 @@ const app = express();
 //env config
 dotenv.config();
 const port = process.env.PORT;
-const dbUrl = process.env.DATABASE_URL?? "mongodb://localhost:27017/vebs";
+const dbUrl = process.env.DATABASE_URL ?? "mongodb://localhost:27017/vebs";
 
 //middleware
 app.use(cors({ origin: process.env.CLIENT_URL }));
@@ -30,11 +30,8 @@ app.use("/api/battery-type", batteryTypeRouter);
 
 //connectDb
 connectDb(dbUrl).then(() => {
-    
-//listen for the requests
-    app.listen(port, () => {
-        console.log(`server is listening on port ${port}`);
-    });
-})
-
-
+  //listen for the requests
+  app.listen(port, () => {
+    console.log(`server is listening on port ${port}`);
+  });
+});
