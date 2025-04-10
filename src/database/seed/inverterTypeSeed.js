@@ -3,23 +3,23 @@ import InverterType from "../../model/InverterType.js";
 const inverterTypes = [
   {
     name: "Grid-tied inverter",
-    efficiency: 80.5,
+    efficiency: 0.8,
   },
   {
     name: "Solar inverter",
-    efficiency: 60.5,
+    efficiency: 0.605,
   },
   {
     name: "Hybrid inverter",
-    efficiency: 73.8,
+    efficiency: 0.738,
   },
   {
     name: "Standalone inverter",
-    efficiency: 83.5,
+    efficiency: 0.835,
   },
   {
     name: "Single Phase inverter",
-    efficiency: 73.5,
+    efficiency: 0.735,
   },
 ];
 
