@@ -8,47 +8,44 @@ export const getAllInverterTypes = async (req, res) => {
   }
 };
 
-export const createInverterTypes = async (req, res) => {
+export const createInverterType = async (req, res) => {
   const { _id, ...data } = req.body;
   try {
-    const createdInverterTypes = await InverterType.createInverterTypes(data);
+    const createdInverterType = await InverterType.createInverterType(data);
     res.status(201).json({
       msg: "Inverter Type created successfully",
-      data: createdInverterTypes,
+      data: createdInverterType,
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-export const updateInverterTypes = async (req, res) => {
+export const updateInverterType = async (req, res) => {
   const { id } = req.params;
   const data = req.body;
   try {
-    const updatedInverterTypes = await InverterType.updateInverterTypes(
-      id,
-      data
-    );
-    if (!updatedInverterTypes) {
-      return res.status(404).json({ error: "InverterTypes not found" });
+    const updatedInverterType = await InverterType.updateInverterType(id, data);
+    if (!updatedInverterType) {
+      return res.status(404).json({ error: "InverterType not found" });
     }
     res.status(200).json({
-      msg: "InverterTypes updated successfully..",
-      data: updatedInverterTypes,
+      msg: "InverterType updated successfully..",
+      data: updatedInverterType,
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-export const deleteInverterTypes = async (req, res) => {
+export const deleteInverterType = async (req, res) => {
   const { id } = req.params;
   try {
-    const deletedInverterTypes = await InverterType.deleteInverterTypes(id);
-    if (!deletedInverterTypes) {
-      return res.status(404).json({ error: "InverterTypes not found" });
+    const deletedInverterType = await InverterType.deleteInverterType(id);
+    if (!deletedInverterType) {
+      return res.status(404).json({ error: "InverterType not found" });
     }
-    res.status(200).json({ message: "InverterTypes deleted successfully" });
+    res.status(200).json({ message: "InverterType deleted successfully" });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
