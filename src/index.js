@@ -6,6 +6,7 @@ import brandRouter from "./routes/brandRoutes.js";
 import categoryRouter from "./routes/categoryRoutes.js";
 import batteryRouter from "./routes/batteryRoutes.js";
 import batteryTypeRouter from "./routes/batteryTypeRoutes.js";
+import inverterTypeRouter from "./routes/inverterTypeRoutes.js";
 import connectDb from "./database/connectDb.js";
 import cors from "cors";
 
@@ -14,7 +15,7 @@ const app = express();
 //env config
 dotenv.config();
 const port = process.env.PORT;
-const dbUrl = process.env.DATABASE_URL?? "mongodb://localhost:27017/vebs";
+const dbUrl = process.env.DATABASE_URL ?? "mongodb://localhost:27017/vebs";
 
 //middleware
 app.use(cors({ origin: process.env.CLIENT_URL }));
@@ -27,14 +28,12 @@ app.use("/api/brand", brandRouter);
 app.use("/api/category", categoryRouter);
 app.use("/api/battery", batteryRouter);
 app.use("/api/battery-type", batteryTypeRouter);
+app.use("/api/inverter-type", inverterTypeRouter);
 
 //connectDb
 connectDb(dbUrl).then(() => {
-    
-//listen for the requests
-    app.listen(port, () => {
-        console.log(`server is listening on port ${port}`);
-    });
-})
-
-
+  //listen for the requests
+  app.listen(port, () => {
+    console.log(`server is listening on port ${port}`);
+  });
+});
