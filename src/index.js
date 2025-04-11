@@ -7,6 +7,7 @@ import categoryRouter from "./routes/categoryRoutes.js";
 import batteryRouter from "./routes/batteryRoutes.js";
 import batteryTypeRouter from "./routes/batteryTypeRoutes.js";
 import inverterTypeRouter from "./routes/inverterTypeRoutes.js";
+import inverterRouter from "./routes/inverterRoutes.js";
 import connectDb from "./database/connectDb.js";
 import cors from "cors";
 
@@ -29,6 +30,7 @@ app.use("/api/category", categoryRouter);
 app.use("/api/battery", batteryRouter);
 app.use("/api/battery-type", batteryTypeRouter);
 app.use("/api/inverter-type", inverterTypeRouter);
+app.use("/api/inverter", inverterRouter);
 
 //connectDb
 connectDb(dbUrl).then(() => {
